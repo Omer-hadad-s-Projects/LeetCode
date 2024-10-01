@@ -1,30 +1,34 @@
-namespace LeetCode;
-
 //https://leetcode.com/problems/palindrome-number/description/
-public static class PalindromNumber
-{
+using NUnit.Framework;
 
-    public static void Run()
+namespace LeetCode
+{
+    [TestFixture]
+    public class PalindromNumberTests
     {
-        Console.WriteLine(IsPalindrom(121));
-        Console.WriteLine(IsPalindrom(-121));
-        Console.WriteLine(IsPalindrom(500));
-        Console.WriteLine(IsPalindrom(2222));
-    }
-    
-    private static bool IsPalindrom(int x)
-    {
-        if (x < 0) return false;
-        var original = x;
-        var copy = 0;
-        var i = 0;
-        while(copy < original && x > 0)
+        [TestCase(121, ExpectedResult = true)]
+        [TestCase(-121, ExpectedResult = false)]
+        [TestCase(500, ExpectedResult = false)]
+        [TestCase(2222, ExpectedResult = true)]
+        [TestCase(0, ExpectedResult = true)]
+        [TestCase(1, ExpectedResult = true)]
+        [TestCase(12321, ExpectedResult = true)]
+        [TestCase(1234321, ExpectedResult = true)]
+        [TestCase(10, ExpectedResult = false)]
+
+        public static bool IsPalindrom(int x)
         {
-            copy *= 10;
-            var leftover = x % 10;
-            copy += leftover;
-            x = (x - leftover) / 10;
-        }  
-        return copy == original;
+            if (x < 0) return false;
+            var original = x;
+            var copy = 0;
+            while (copy < original && x > 0)
+            {
+                copy *= 10;
+                var modulo = x % 10;
+                copy += modulo;
+                x = (x - modulo) / 10;
+            }  
+            return copy == original;
+        }
     }
 }
