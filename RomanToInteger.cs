@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace LeetCode
 {
     [TestFixture]
-    public class RomanToIntegerTests
+    public class RomanToInteger
     {
         [TestCase("III", ExpectedResult = 3)]
         [TestCase("LVIII", ExpectedResult = 58)]

@@ -53,3 +53,5 @@ publish/
 
 # Azure Web App publish settings
 PublishProfiles/
+obj
+bin

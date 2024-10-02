@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace LeetCode
 {
     [TestFixture]
-    public class LongestCommonPrefixTests
+    public class LongestCommonPrefix
     {
         [TestCase("flower", "flow", "flight", ExpectedResult = "fl")]
         [TestCase("dog", "racecar", "car", ExpectedResult = "")]

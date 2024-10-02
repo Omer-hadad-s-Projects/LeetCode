@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace LeetCode
 {
     [TestFixture]
-    public class PalindromNumberTests
+    public class PalindromNumber
     {
         [TestCase(121, ExpectedResult = true)]
         [TestCase(-121, ExpectedResult = false)]
